@@ -121,4 +121,55 @@ git clone https://github.com/Keshav0781/OCT-SAM-FineTuning-LoRA.git
 cd OCT-SAM-FineTuning-LoRA
 pip install -r requirements.txt
 ```
+### Training — SAM + LoRA
+
+Run the training script separately for each dataset (AMD / Macular Hole).
+
+#### Example — Fine-tune on AMD
+```bash
+python code/sam_lora_train.py \
+  --dataset amd \
+  --data_dir data/ \
+  --epochs 50 \
+  --batch_size 16 \
+  --lr 1e-4 \
+  --save_dir models/sam_lora/amd
+```
+#### Example — Fine-tune on Macular Hole
+```bash
+python code/sam_lora_train.py \
+  --dataset macular_hole \
+  --data_dir data/ \
+  --epochs 50 \
+  --batch_size 16 \
+  --lr 1e-4 \
+  --save_dir models/sam_lora/macular_hole
+```
+
+### Inference / Demo
+
+To test a fine-tuned SAM + LoRA model on a sample OCT image:
+
+```bash
+python code/sam_lora_inference.py \
+  --dataset amd \
+  --checkpoint models/sam_lora/amd/sam_lora_checkpoint.pth \
+  --input data/sample_images/amd/amd_1084498_1.jpg \
+  --output results/inference/amd/
+```
+### For Macular Hole:
+python code/sam_lora_inference.py \
+  --dataset macular_hole \
+  --checkpoint models/sam_lora/macular_hole/sam_lora_checkpoint.pth \
+  --input data/sample_images/macular_hole/vid_1258159_1.png \
+  --output results/inference/macular_hole/
+
+#### Demo Notebook
+
+A quick-start notebook is provided for testing and visualization:
+
+1. Open [`notebooks/demo_sam_lora.ipynb`](notebooks/demo_sam_lora.ipynb).
+2. Place a sample OCT image in `data/sample_images/amd/` or `data/sample_images/macular_hole/`.
+3. Update the checkpoint path (e.g., `models/sam_lora/amd/sam_lora_checkpoint.pth`).
+4. Run all cells to generate segmentation masks and compare against ground truth.
 
