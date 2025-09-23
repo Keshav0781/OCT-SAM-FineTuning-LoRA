@@ -1,3 +1,23 @@
+# OCT-SAM-FineTuning-LoRA
+
+This repository contains the implementation of **LoRA-based fine-tuning** of the **Segment Anything Model (SAM)** for biomarker segmentation in **Optical Coherence Tomography (OCT)** scans.  
+It extends our previous work with U-Net family and nnU-Net ([OCT-Biomarker-Segmentation](https://github.com/Keshav0781/OCT-Biomarker-Segmentation)), focusing here on **parameter-efficient adaptation of SAM**.
+
+---
+
+## Table of Contents
+- [Motivation](#motivation)
+- [Dataset & Preprocessing](#dataset--preprocessing)
+- [Methodology — SAM + LoRA Fine-tuning](#methodology--sam--lora-fine-tuning)
+- [Results — SAM (LoRA) Fine-tuning](#results--sam-lora-fine-tuning)
+- [How to Run / Reproduce](#how-to-run--reproduce)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Training — SAM + LoRA](#training--sam--lora)
+  - [Inference](#inference)
+- [Conclusion & Future Work](#conclusion--future-work)
+
+
 ## Motivation
 
 Segment Anything Model (SAM) is a powerful vision foundation model, but **zero-shot segmentation** often fails on domain-specific medical images like OCT scans.  
