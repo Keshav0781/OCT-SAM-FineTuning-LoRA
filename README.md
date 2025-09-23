@@ -103,8 +103,4 @@ This section summarizes the SAM + LoRA fine-tuning results for OCT biomarker seg
 
 ---
 
-**Notes**
-- Values were copied from the presentation (AMD: slide p.37; Macular Hole: slide p.42).  
-- CSVs in `results/` contain the same numbers for quick download/plotting.  
-- If an image fails to render, check the file path and extension (case-sensitive). Rename the image on GitHub or update the `src` in the markdown.
 
