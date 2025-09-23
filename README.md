@@ -146,30 +146,21 @@ python code/sam_lora_train.py \
   --save_dir models/sam_lora/macular_hole
 ```
 
-### Inference / Demo
+### Inference
 
-To test a fine-tuned SAM + LoRA model on a sample OCT image:
+Example command-line inference (using fine-tuned SAM + LoRA):
 
 ```bash
-python code/sam_lora_inference.py \
-  --dataset amd \
+python code/amd/sam_lora_finetune.py \
+  --mode inference \
   --checkpoint models/sam_lora/amd/sam_lora_checkpoint.pth \
-  --input data/sample_images/amd/amd_1084498_1.jpg \
+  --input data/sample_images/amd/amd_example.png \
   --output results/inference/amd/
 ```
-### For Macular Hole:
-python code/sam_lora_inference.py \
-  --dataset macular_hole \
+python code/macular_hole/sam_lora_finetune.py \
+  --mode inference \
   --checkpoint models/sam_lora/macular_hole/sam_lora_checkpoint.pth \
-  --input data/sample_images/macular_hole/vid_1258159_1.png \
+  --input data/sample_images/macular_hole/mh_example.png \
   --output results/inference/macular_hole/
 
-#### Demo Notebook
-
-A quick-start notebook is provided for testing and visualization:
-
-1. Open [`notebooks/demo_sam_lora.ipynb`](notebooks/demo_sam_lora.ipynb).
-2. Place a sample OCT image in `data/sample_images/amd/` or `data/sample_images/macular_hole/`.
-3. Update the checkpoint path (e.g., `models/sam_lora/amd/sam_lora_checkpoint.pth`).
-4. Run all cells to generate segmentation masks and compare against ground truth.
 
