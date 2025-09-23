@@ -157,10 +157,11 @@ python code/amd/sam_lora_finetune.py \
   --input data/sample_images/amd/amd_example.png \
   --output results/inference/amd/
 ```
+```bash
 python code/macular_hole/sam_lora_finetune.py \
   --mode inference \
   --checkpoint models/sam_lora/macular_hole/sam_lora_checkpoint.pth \
   --input data/sample_images/macular_hole/mh_example.png \
   --output results/inference/macular_hole/
-
+```
 
