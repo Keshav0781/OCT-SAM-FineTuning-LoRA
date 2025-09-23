@@ -21,3 +21,24 @@ Each dataset contains manually annotated B-scans with pixel-wise masks for clini
 - Standard **data augmentation** (random flips, rotations, brightness/contrast) was applied during training.  
 
 > For visual dataset distributions and annotation examples, see the [previous repository](https://github.com/Keshav0781/OCT-Biomarker-Segmentation).
+
+## Methodology — SAM + LoRA Fine-tuning
+
+The **Segment Anything Model (SAM)** provides strong image segmentation priors but struggles in the OCT domain.  
+To adapt it, we used **Low-Rank Adaptation (LoRA)**, a lightweight fine-tuning technique that injects trainable rank-decomposition matrices into specific attention layers.
+
+### Why LoRA?
+- SAM has **hundreds of millions of parameters**, making full fine-tuning impractical.  
+- LoRA fine-tunes only a small number of additional parameters, keeping training efficient and memory-friendly.  
+- This enables effective adaptation to OCT biomarker segmentation with limited annotated data.
+
+### Training setup
+- **Backbone**: Vision Transformer encoder from SAM.  
+- **LoRA rank**: 16 (applied to attention projections).  
+- **Optimizer**: AdamW with learning rate = 1e-4.  
+- **Batch size**: 16.  
+- **Epochs**: up to 50 with early stopping (patience = 5).  
+- **Loss**: Dice loss + Cross-entropy combination.  
+- **Datasets**: AMD and Macular Hole OCT B-scans, resized to 1024×1024.  
+
+> The training was performed separately for AMD and Macular Hole datasets, producing disease-specific SAM + LoRA checkpoints.
