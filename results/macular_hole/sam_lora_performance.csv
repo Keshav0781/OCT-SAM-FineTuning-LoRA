@@ -1,0 +1,3 @@
+Method,Mean_IoU,Mean_Dice,Notes
+SAM-zero-shot,0.2009,0.2283,"From presentation slide p.42 (zero-shot)"
+SAM-LoRA-finetuned,0.8939,0.9010,"From presentation slide p.42 (fine-tuned)"
