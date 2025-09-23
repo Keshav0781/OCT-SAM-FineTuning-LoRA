@@ -27,6 +27,11 @@ Each dataset contains manually annotated B-scans with pixel-wise masks for clini
 The **Segment Anything Model (SAM)** provides strong image segmentation priors but struggles in the OCT domain.  
 To adapt it, we used **Low-Rank Adaptation (LoRA)**, a lightweight fine-tuning technique that injects trainable rank-decomposition matrices into specific attention layers.
 
+<div align="center">
+  <img src="figures/methodology/sam_architecture.png" alt="SAM architecture" width="600"/><br>
+  <b>Figure: High-level architecture of SAM (image encoder + prompt encoder + mask decoder)</b>
+</div>
+
 ### Why LoRA?
 - SAM has **hundreds of millions of parameters**, making full fine-tuning impractical.  
 - LoRA fine-tunes only a small number of additional parameters, keeping training efficient and memory-friendly.  
