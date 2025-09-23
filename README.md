@@ -151,17 +151,17 @@ python code/sam_lora_train.py \
 Example command-line inference (using fine-tuned SAM + LoRA):
 
 ```bash
-python code/amd/sam_lora_finetune.py \
-  --mode inference \
+# AMD inference
+python code/sam_lora_finetune.py \
+  --dataset amd \
   --checkpoint models/sam_lora/amd/sam_lora_checkpoint.pth \
   --input data/sample_images/amd/amd_example.png \
   --output results/inference/amd/
-```
-```bash
-python code/macular_hole/sam_lora_finetune.py \
-  --mode inference \
+
+# Macular Hole inference
+python code/sam_lora_finetune.py \
+  --dataset macular_hole \
   --checkpoint models/sam_lora/macular_hole/sam_lora_checkpoint.pth \
   --input data/sample_images/macular_hole/mh_example.png \
   --output results/inference/macular_hole/
 ```
-
