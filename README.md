@@ -102,5 +102,23 @@ This section summarizes the SAM + LoRA fine-tuning results for OCT biomarker seg
 </div>
 
 ---
+## How to Run / Reproduce
 
+### Requirements
+- Python 3.8+
+- PyTorch ≥ 1.10
+- torchvision
+- [segment-anything](https://github.com/facebookresearch/segment-anything)
+- [peft](https://github.com/huggingface/peft) (for LoRA fine-tuning)
+- transformers
+- matplotlib, numpy, scikit-learn
+
+### Installation
+Clone this repository and install dependencies:
+
+```bash
+git clone https://github.com/Keshav0781/OCT-SAM-FineTuning-LoRA.git
+cd OCT-SAM-FineTuning-LoRA
+pip install -r requirements.txt
+```
 
