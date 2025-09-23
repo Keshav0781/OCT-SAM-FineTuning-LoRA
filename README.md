@@ -94,7 +94,7 @@ This section summarizes the SAM + LoRA fine-tuning results for OCT biomarker seg
         <b>Macular Hole — IoU / Dice (Zero-shot vs LoRA)</b>
       </td>
       <td align="center">
-        <img src="figures/macular_hole/sam_result_macular.png" alt="SAM MH: qualitative results" width="420"/><br>
+        <img src="figures/macular_hole/sam_results_macular.png" alt="SAM MH: qualitative results" width="420"/><br>
         <b>Macular Hole — Example qualitative output (LoRA fine-tuned)</b>
       </td>
     </tr>
