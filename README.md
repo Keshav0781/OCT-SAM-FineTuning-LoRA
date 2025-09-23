@@ -165,3 +165,22 @@ python code/sam_lora_finetune.py \
   --input data/sample_images/macular_hole/mh_example.png \
   --output results/inference/macular_hole/
 ```
+## Conclusion & Future Work
+
+This work demonstrated that **SAM alone (zero-shot)** performs poorly on OCT biomarker segmentation.  
+With **LoRA-based fine-tuning**, SAM achieved **large gains in IoU and Dice** on both AMD and Macular Hole datasets, showing that lightweight adaptation is highly effective for domain-specific medical imaging.
+
+### Key takeaways
+- **Zero-shot SAM** underperformed due to the gap between natural images and OCT scans.  
+- **LoRA fine-tuning** enabled SAM to surpass traditional CNN-based architectures from our previous work.  
+- The method required **significantly fewer trainable parameters** than full fine-tuning, making it practical.  
+
+### Limitations
+- Training was limited to **2D B-scans** (not volumetric OCT).  
+- Fine-tuned checkpoints are not included in this repo due to size constraints.  
+
+### Future directions
+- Extend fine-tuning to **other retinal diseases** and multimodal imaging (OCT + fundus).  
+- Explore **3D OCT volumes** with SAM variants.  
+- Investigate integration with **clinical decision-support systems**.  
+- Compare LoRA with other **parameter-efficient fine-tuning (PEFT)** methods.  
